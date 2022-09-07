@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Counting anagrams in sentence
+ * Counting anagrams in the sentence
  */
 public class Anagram {
 
     /**
-     * Return number of anagrams in sentence
+     * Return number of anagrams in the sentence
      *
      * @param input sentence that must contain only spaces and lowercase
      *              letters, no punctuation, numbers, or uppercase letters
