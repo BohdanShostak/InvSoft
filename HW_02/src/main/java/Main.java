@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+
         Transport car1 = new Transport("car", "Skoda", "Octavia", 4.5);
         Transport car2 = new Sedan("sedan", "Skoda", "Octavia", 4.5, "Grey");
         Transport car3 = new Wagon("wagon", "Skoda", "Octavia", 4.5, 450);
