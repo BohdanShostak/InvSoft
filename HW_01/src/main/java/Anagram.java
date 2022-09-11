@@ -13,7 +13,7 @@ public class Anagram {
      *              letters, no punctuation, numbers, or uppercase letters
      * @return number of anagrams
      */
-    public int ArrayChallenge(String input) {
+    public int arrayChallenge(String input) {
         int anagramCounter = 0;
         String[] words = input.split(" ");
         List<String> anagramBuffer = new ArrayList<>();
@@ -22,8 +22,8 @@ public class Anagram {
             int startComparingFrom = i + 1;
             for (int j = startComparingFrom; j < words.length; j++) {
                 String comparedWord = words[j];
-                if (currentWord.length() == comparedWord.length() & !currentWord.equals(comparedWord) &
-                        !anagramBuffer.contains(comparedWord) & checkForAnagram(currentWord, comparedWord)) {
+                if (currentWord.length() == comparedWord.length() && !currentWord.equals(comparedWord) &&
+                        !anagramBuffer.contains(comparedWord) && checkForAnagram(currentWord, comparedWord)) {
                     anagramBuffer.add(comparedWord);
                     anagramCounter++;
                 }

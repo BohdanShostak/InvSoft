@@ -10,7 +10,7 @@ public class Main {
         boolean isActiveScanner = true;
         while (isActiveScanner) {
             String currentLine = scanner.nextLine();
-            System.out.println(anagram.ArrayChallenge(currentLine));
+            System.out.println(anagram.arrayChallenge(currentLine));
             if (currentLine.equals("stop")) {
                 isActiveScanner = false;
             }

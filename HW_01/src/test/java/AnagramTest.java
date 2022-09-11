@@ -10,10 +10,10 @@ public class AnagramTest {
         String str3 = "i must must stop poos";
         String str4 = "cow woc ocw cow cow owc calsas sadfg";
         Anagram anagram = new Anagram();
-        Assert.assertEquals(2, anagram.ArrayChallenge(str1));
-        Assert.assertEquals(1, anagram.ArrayChallenge(str2));
-        Assert.assertEquals(0, anagram.ArrayChallenge(str3));
-        Assert.assertEquals(4, anagram.ArrayChallenge(str4));
+        Assert.assertEquals(2, anagram.arrayChallenge(str1));
+        Assert.assertEquals(1, anagram.arrayChallenge(str2));
+        Assert.assertEquals(0, anagram.arrayChallenge(str3));
+        Assert.assertEquals(4, anagram.arrayChallenge(str4));
     }
 
 }
