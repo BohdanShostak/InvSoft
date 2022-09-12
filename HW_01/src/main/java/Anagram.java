@@ -35,7 +35,7 @@ public class Anagram {
     /**
      * Return a boolean value indicating if two comparing words are anagrams
      *
-     * @param current  First word for comparing
+     * @param current First word for comparing
      * @param compared Second word for comparing
      * @return Boolean two words are anagrams
      */
