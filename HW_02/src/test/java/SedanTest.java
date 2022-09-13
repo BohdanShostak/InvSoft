@@ -2,6 +2,9 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Collection;
+import java.util.HashSet;
+
 public class SedanTest {
 
     public static Transport car1;
@@ -67,6 +70,15 @@ public class SedanTest {
         } else {
             Assert.assertNotEquals(car1.hashCode(), car4.hashCode());
         }
+    }
+
+    @Test
+    public void EqualsHashCodeWithCollectionTest() {
+        Collection<Transport> cars = new HashSet<>();
+        cars.add(car1);
+        cars.add(car1);
+        cars.add(car1);
+        Assert.assertEquals(1, cars.size());
     }
 
 }
