@@ -3,7 +3,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class TruckTest {
 
@@ -75,6 +77,19 @@ public class TruckTest {
         cars.add(car1);
         cars.add(car1);
         Assert.assertEquals(1, cars.size());
+    }
+
+    @Test
+    public void HashCodeWithHashMapTest() {
+        Map<Transport, Integer> hashMap = new HashMap<>();
+        hashMap.put(car1, 25000);
+        hashMap.put(car2, 25000);
+        hashMap.put(car4, 18000);
+        hashMap.get(car1);
+        Assert.assertNotNull(hashMap.get(car1));
+        Assert.assertNotNull(hashMap.get(car2));
+        Assert.assertNotNull(hashMap.get(car4));
+        Assert.assertNotEquals(hashMap.get(car1), hashMap.get(car4));
     }
 
 }
