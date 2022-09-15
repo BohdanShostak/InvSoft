@@ -5,7 +5,6 @@
 <title>YOUR TITLE HERE</title>
 <script src="js/jquery-1.11.2.min.js"></script>
 <script>
-    
 function showText() {
     document.getElementById("showMes").style.display = "block";
 };
@@ -29,6 +28,19 @@ function loadDoc() {
   xhttp.send();
 }
     
+function loadDocPost() {
+    $.post("https://jsonplaceholder.typicode.com/posts",
+    {
+        title: "foo",
+        body: "bar",
+        userId: "1"
+    },
+    function(data){
+      //alert("Data: " + data.title + "\nStatus: " + status);
+        $( "#task5" ).append("Title: " + data.title);
+    });
+}
+     
 // Run after the Document DOM tree is constructed
 $(document).ready( function() {  // or shorthand of $( function () { 
     // task1
@@ -52,9 +64,12 @@ $(document).ready( function() {  // or shorthand of $( function () {
     loadDoc();
     document.getElementById("task3").after(t4);
     
+    //task5
+    var t5 = document.createElement("div");
+    t5.setAttribute("id", "task5");
+    loadDocPost();
+    document.getElementById("task4").after(t5); 
 });
-    
-    
 </script>
 </head>
 <body>
