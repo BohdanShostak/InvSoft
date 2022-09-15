@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>YOUR TITLE HERE</title>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+    
+function showText() {
+    document.getElementById("showMes").style.display = "block";
+};
+    
+function hideText() {
+    document.getElementById("showMes").style.display = "none";
+};
+    
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var json = JSON.parse(this.responseText);
+        var title1 = json[0].title;
+        var status1 = this.status;
+        var response = "title: " + title1 + "<br>" + "status: " + status1;
+        document.getElementById("task4").innerHTML = response;
+    }
+  };
+  xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+  xhttp.send();
+}
+    
+// Run after the Document DOM tree is constructed
+$(document).ready( function() {  // or shorthand of $( function () { 
+    // task1
+    $('h1').after("<div id = 'task1'><p>Welcome</p></div>"); 
+    
+    // task2
+    var w2 = document.createElement("div");
+    w2.setAttribute("id", "task2");
+    w2.innerHTML = "<p>Welcome</p>";
+    document.getElementById("task1").after(w2);
+    
+    // task3
+    var t3 = document.createElement("div");
+    t3.setAttribute("id", "task3");
+    t3.innerHTML = "<p id = 'st'>some text</p><button type = 'button' onclick ='showText()'>Show</button><button type = 'button' onclick ='hideText()'>Hide</button><p id='showMes' style='display: none;'>show</p>";
+    document.getElementById("task2").after(t3);
+    
+    //task4
+    var t4 = document.createElement("div");
+    t4.setAttribute("id", "task4");
+    loadDoc();
+    document.getElementById("task3").after(t4);
+    
+});
+    
+    
+</script>
+</head>
+<body>
+<h1>Hello, world!</h1>
+</body>
+</html>
